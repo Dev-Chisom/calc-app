@@ -26,23 +26,23 @@
 
     if(operate === '+'){
        let ans = document.getElementById('result').value = num1+num2;
-       document.querySelector('.show').innerHTML = `${num1} ${operate} ${num2} = ${ans}`;
+       show.innerHTML = `${num1} ${operate} ${num2} = ${ans}`;
     }
     if(operate === '-'){
        let ans = document.getElementById('result').value = num1-num2;
-       document.querySelector('.show').innerHTML = `${num1} ${operate} ${num2} = ${ans}`;
+       show.innerHTML = `${num1} ${operate} ${num2} = ${ans}`;
     }
     if(operate === '/'){
         let ans = document.getElementById('result').value = num1/num2;
-        document.querySelector('.show').innerHTML = `${num1} ${operate} ${num2} = ${ans}`;
+        show.innerHTML = `${num1} ${operate} ${num2} = ${ans}`;
     }
     if(operate === 'x'){
        let ans = document.getElementById('result').value = num1*num2;
-       document.querySelector('.show').innerHTML = `${num1} ${operate} ${num2} = ${ans}`;
+       show.innerHTML = `${num1} ${operate} ${num2} = ${ans}`;
     }
     if(operate === '%'){
        let ans = document.getElementById('result').value = num1%num2;
-       document.querySelector('.show').innerHTML = `${num1} ${operate} ${num2} = ${ans}`;
+       show.innerHTML = `${num1} ${operate} ${num2} = ${ans}`;
     }
 
     //save in database
