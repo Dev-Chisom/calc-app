@@ -61,13 +61,11 @@
   //Listen for incoming messages
   firebase.database().ref("results").on("child_added", function(snapshot) {
     let html ="";
-    // give each message a unique id
-    html += "<p id='message-" + snapshot.key + "'>";
     html += "<p>";
-    html += snapshot.val().sender + " : " + snapshot.val().message;
+    html += snapshot.val().num1 + snapshot.val().num2 + "=" + snapshot.val().result;
     html += "</p>";
 
-    document.getElementById("result").innerHTML += html
+    document.getElementsByClassName("show").innerHTML += html
 
   })
 
