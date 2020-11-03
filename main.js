@@ -1,6 +1,4 @@
-// const myName = prompt("Enter your name");
- 
- // Your web app's Firebase configuration
+// Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   var firebaseConfig = {
     apiKey: "AIzaSyAiJmTBbQL5dTlPt--u4PKIJ579lUGq-Pw",
@@ -24,7 +22,6 @@
       //get message
     const num1 = parseFloat(document.getElementById("n1").value)
     const num2 = parseFloat(document.getElementById("n2").value)
-    // const result = document.getElementById("result");
     const operate = document.getElementById("opr").value;
 
      let ans;
@@ -32,23 +29,22 @@
 
     if(operate === '+'){
         ans = document.getElementById('result').value = num1+num2;
-      //  show.innerHTML = `${myName} : ${num1} ${operate} ${num2} = ${ans}`;
+     
     }
     if(operate === '-'){
         ans = document.getElementById('result').value = num1-num2;
-      //  show.innerHTML = `${myName} : ${num1} ${operate} ${num2} = ${ans}`;
+     
     }
     if(operate === '/'){
          ans = document.getElementById('result').value = num1/num2;
-      //   show.innerHTML = `${myName} :  ${num1} ${operate} ${num2} = ${ans}`;
     }
     if(operate === 'x'){
-       ans = document.getElementById('result').value = num1 * num2;
-      //  show.innerHTML = `${myName} : ${num1} ${operate} ${num2} = ${ans}`;
+        ans = document.getElementById('result').value = num1*num2;
+     
     }
     if(operate === '%'){
        ans = document.getElementById('result').value = num1%num2;
-      //  show.innerHTML = `${myName} : ${num1} ${operate} ${num2} = ${ans}`;
+     
     }
 
     //save in database
@@ -57,7 +53,6 @@
         "n1": num1,
         "n2": num2,
         "opr":operate,
-        // "show": show,
         "result": ans,
         
        
@@ -69,21 +64,12 @@
   //Listen for incoming messages
   firebase.database().ref("results").limitToLast(10).on("child_added", function(snapshot) {
    const show = document.querySelector('.show');
-   const sender = snapshot.val().sender;
-   const n1 =snapshot.val().n1;
-   const n2 = snapshot.val().n2;
-   const res =snapshot.val().result;
-   const operate = document.getElementById("opr").value;
 
-   
     let html ="";
     html += "<p>";
-    html += ` ${sender}: ${n1} ${operate} ${n2} = ${res} `;
+    html +=snapshot.val().sender + ":" + snapshot.val().n1 +  snapshot.val().opr   + snapshot.val().n2 + "=" + snapshot.val().result;
     html += "</p>";
 
-    
-
-   
     show.innerHTML += html
 
   })
